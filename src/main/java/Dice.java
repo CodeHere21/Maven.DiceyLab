@@ -1,14 +1,18 @@
 public class Dice {
-public int value;
+public int numberOfDice;
 
-public Dice(){
-    this.value=(int)(Math.random()*6+1);//toss
+public Dice(int numberOfDice){
+    this.numberOfDice=numberOfDice;
 }
-public Integer tossAndSum(){
-    Dice dice1=new Dice();
-    Dice dice2=new Dice();
-    Integer sum;
-    sum=dice1.value+ dice2.value;
+public Integer diceRoll(){
+    int sum=0;
+    for(int i=0;i<numberOfDice;i++){
+        sum+=(int)(Math.random()*6)+1;
+    }
     return sum;
 }
+public int getNumberOfDice(){
+    return numberOfDice;
+}
+
 }
